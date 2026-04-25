@@ -5,12 +5,17 @@
     "packageManager": "npm"
   },
   "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "css"
+    }
+  },
   "projects": {
     "ng-udemy": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "css"
         }
       },
       "root": "",
@@ -22,15 +27,20 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "less",
+            "inlineStyleLanguage": "css",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+                {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "assets"
+                }
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.css"
             ]
           },
           "configurations": {
