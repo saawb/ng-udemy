@@ -1,1 +1,8 @@
-<p>user works!</p>
+<div>
+  @for (user of users ; track user.id) { 
+    <button (click)="onSelectUser()">
+        <img [src] = "imagePath + user.avatar" [alt] = "user.name" />
+        <span>{{user.name }}</span>
+    </button>
+  }
+</div>
